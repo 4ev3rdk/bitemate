@@ -1,3 +1,4 @@
+//Application entry point
 package com.bitemate;
 
 import org.springframework.boot.SpringApplication;

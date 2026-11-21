@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteMate | Register</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body>
+
+<div class="auth-container">
+    <h1>Create an Account</h1>
+    <p>Join BiteMate to manage your food and nutrition.</p>
+
+    <!-- Displays errors returned by the registration controller. -->
+    <p class="error" th:if="${error}" th:text="${error}"></p>
+
+    <!-- Sends registration details to UserController. -->
+    <form th:action="@{/register}" method="post">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirmPassword" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a th:href="@{/login}">Login</a></p>
+    <a th:href="@{/}">Back to Home</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f3fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centers the login/register form */
+.auth-container {
+    width: 350px;
+    margin: 70px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #00000015;
+}
+
+/* Page heading */
+.auth-container h1 {
+    text-align: center;
+    color: #5426a8;
+}
+
+/* Supporting text */
+.auth-container p {
+    text-align: center;
+    color: #555;
+}
+
+/* Form labels */
+.auth-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+.auth-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.auth-container button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 11px;
+    background-color: #5426a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Error message */
+.error {
+    color: red !important;
+}
+
+/* Links */
+.auth-container a {
+    color: #5426a8;
+}
+
+/* Adjusts the form for smaller screens */
+@media (max-width: 450px) {
+    .auth-container {
+        width: auto;
+        margin: 30px 15px;
+    }
+}

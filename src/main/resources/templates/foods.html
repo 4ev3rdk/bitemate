@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteMate | Food Dashboard</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<header>
+    <h1>BiteMate</h1>
+    <p>Your food and nutrition tracker</p>
+</header>
+
+<main>
+    <h2>Your Food Items</h2>
+
+    <!-- Form to add a new food item -->
+    <form th:action="@{/add-food}" method="post">
+
+        <input type="text" name="name" placeholder="Food name" required>
+
+        <input type="number" name="calories" placeholder="Calories (kcal)" step="0.1" min="0" required>
+
+        <input type="number" name="protein" placeholder="Protein (g)" step="0.1" min="0" required>
+
+        <input type="number" name="carbohydrates" placeholder="Carbs (g)" step="0.1" min="0" required>
+
+        <input type="number" name="fat" placeholder="Fat (g)" step="0.1" min="0" required>
+
+        <button type="submit">Add Food</button>
+
+    </form>
+
+    <!-- Display a message if the database has no food items -->
+    <p th:if="${#lists.isEmpty(foods)}">
+        No food items added yet.
+    </p>
+
+    <!-- Display every food item from the database -->
+    <div class="food-container">
+
+        <div class="food-card" th:each="food : ${foods}">
+
+            <h3 th:text="${food.name}">Food Name</h3>
+
+            <p>
+                Calories:
+                <span th:text="${food.calories}">0</span> kcal
+            </p>
+
+            <p>
+                Protein:
+                <span th:text="${food.protein}">0</span> g
+            </p>
+
+            <p>
+                Carbs:
+                <span th:text="${food.carbohydrates}">0</span> g
+            </p>
+
+            <p>
+                Fat:
+                <span th:text="${food.fat}">0</span> g
+            </p>
+
+            <!-- Delete this food item -->
+            <form th:action="@{/delete-food/{id}(id=${food.id})}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+</body>
+</html>

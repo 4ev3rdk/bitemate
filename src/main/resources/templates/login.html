@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteMate | Login</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body>
+
+<div class="auth-container">
+    <h1>Login to BiteMate</h1>
+    <p>Welcome back!</p>
+
+    <form>
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a th:href="@{/register}">Register</a></p>
+    <a th:href="@{/}">Back to Home</a>
+</div>
+
+</body>
+</html>

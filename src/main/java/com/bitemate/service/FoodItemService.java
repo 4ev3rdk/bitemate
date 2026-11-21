@@ -27,4 +27,8 @@ public class FoodItemService {
     public List<FoodItem> getAllFoodItems() {
         return foodItemRepository.findAll(); //Spring Data JPA Method
     }
+    // Deletes a food item from the database using its ID.
+    public void deleteFoodItem(Long id) {
+        foodItemRepository.deleteById(id);
+    }
 }
